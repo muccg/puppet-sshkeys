@@ -26,7 +26,7 @@ class sshkeys {
     owner   => root,
     group   => root,
     mode    => '0600',
-    source  => "puppet:///modules/ssh/root_authorized_keys",
+    source  => "puppet:///modules/sshkeys/root_authorized_keys",
     require => File['/root/.ssh'], 
   }
   
