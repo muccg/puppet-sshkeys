@@ -29,6 +29,22 @@ class sshkeys {
     source  => "puppet:///modules/sshkeys/root_authorized_keys",
     require => File['/root/.ssh'], 
   }
+
+  file { '/home/ubuntu/.ssh':
+    ensure  => directory,
+    owner   => ubuntu,
+    group   => ubuntu,
+    mode    => '0700',
+  }
+
+  file { '/home/ubuntu/.ssh/authorized_keys':
+    ensure  => file,
+    owner   => ubuntu,
+    group   => ubuntu,
+    mode    => '0600',
+    source  => "puppet:///modules/sshkeys/ubuntu_authorized_keys",
+    require => File['/home/ubuntu/.ssh'], 
+  }
   
   service { 'ssh':
     ensure     => running,
