@@ -1,5 +1,5 @@
-name         'muccg-ccgcompute'
-version      '1.2.0'
+name         'muccg-sshkeys'
+version      '0.0.1'
 
 author       'Centre for Comparative Genomics'
 license      'GNU GPL Version 3'
